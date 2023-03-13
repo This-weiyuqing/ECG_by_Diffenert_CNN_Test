@@ -34,11 +34,11 @@ def getDataSet(number, X_data, Y_data):
     # 读取心电数据记录
     print("正在读取 " + number + " 号心电数据...")
     # 读取MLII导联的数据
-    record = wfdb.rdrecord('W:/MIT-BIT/mit-bih-arrhythmia-database-1.0.0/' + number, channel_names=['MLII'])
+    record = wfdb.rdrecord('mit-bih-arrhythmia-database-1.0.0/' + number, channel_names=['MLII'])
     data = record.p_signal.flatten()
     rdata = denoise(data=data)
     # 获取心电数据记录中R波的位置和对应的标签
-    annotation = wfdb.rdann('W:/MIT-BIT/mit-bih-arrhythmia-database-1.0.0/' + number, 'atr')
+    annotation = wfdb.rdann('mit-bih-arrhythmia-database-1.0.0/' + number, 'atr')
     Rlocation = annotation.sample
     Rclass = annotation.symbol
     # 去掉前后的不稳定数据
@@ -127,12 +127,12 @@ def buildModel():
 def plotHeatMap(Y_test, Y_pred):
     con_mat = confusion_matrix(Y_test, Y_pred)
     # 绘图
-    fig=plt.figure(figsize=(4, 5))
+    plt.figure(figsize=(4, 5))
     seaborn.heatmap(con_mat, annot=True, fmt='.20g', cmap='Blues')
     plt.ylim(0, 5)
     plt.xlabel('Predicted labels')
     plt.ylabel('True labels')
-    plt.show(fig)
+    plt.show()
 
 
 def main():
