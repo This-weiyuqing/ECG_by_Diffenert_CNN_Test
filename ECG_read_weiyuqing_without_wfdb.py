@@ -105,8 +105,12 @@ del ATRTIME[len(ATRTIME)-1]
 ATRTIME=np.array(ATRTIME)
 ATRTIME=np.cumsum(ATRTIME)/sfreq
 
-ind=np.where(ATRTIME<=TIME[-1][0])
+ind=np.where(ATRTIME<=TIME[-1])[0]
 ATRTIMED=ATRTIME[ind]
 
 ANNOT=np.round(ANNOT)
 ANNOTD=ANNOT[ind]
+
+print(M)
+print(ANNOT)
+print(ATRTIME)
