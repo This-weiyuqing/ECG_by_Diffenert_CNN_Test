@@ -14,7 +14,7 @@ def getDataset(number, X_data):
     Rclass = annotation.symbol
 
     X_data.append(data)
-
+    wfdb.plot_wfdb(record=record, annotation=annotation, time_units='seconds')
     return
 
 
@@ -26,14 +26,18 @@ def loadData():
     dataSet = []
     for n in numberSet:
         getDataset(n, dataSet)
-        print(dataSet)
+
     return dataSet
 
+
 def main():
-    dataSet=loadData()
-    dataSet=np.array(dataSet)
+    dataSet = loadData()
+    dataSet = np.array(dataSet)
+    print(dataSet)
+    print(dataSet.__sizeof__())
     print(dataSet.shape)
     print("get ECG data")
+
 
 if __name__ == '__main__':
     main()
