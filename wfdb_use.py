@@ -7,6 +7,8 @@ import matplotlib.pyplot
 PATH = './mit-bih-arrhythmia-database-1.0.0/'
 
 
+# file error with read_ecg_data(data) parameter data false
+
 def read_ecg_data(data):
     # get the data from the ecg data file and set begin and end points
     record = wfdb.rdrecord(PATH + data, sampfrom=0, sampto=1500)
@@ -27,19 +29,23 @@ def read_ecg_data(data):
 
     print(record.fs)
 
-    annotations = wfdb.rdann(PATH+data,'atr')
+    # get type
+    annotations = wfdb.rdann(PATH + data, 'atr')
     print(type(annotations))
     print(dir(annotations))
 
-    #get R
+    # get R
     print(annotations.sample)
-    #get label of Heart beat
+    # get label of Heart beat
     print(annotations.sample)
-    #num
+    # num
     print(annotations.ann_len)
-    #show label of beat
+    # show label of beat
     print(wfdb.show_ann_labels())
 
     matplotlib.pyplot.draw_ecg(record.p_signal)
     return record.p_signal
 
+
+if __name__ == '__main__':
+    read_ecg_data(100)
