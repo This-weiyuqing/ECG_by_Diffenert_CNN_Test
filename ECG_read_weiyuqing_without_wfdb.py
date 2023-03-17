@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 from numpy import reshape
 
 # arr =
-PATH = "mit-bih-arrhythmia-database-1.0.0/"
+ECGDATAPATH = "mit-bih-arrhythmia-database-1.0.0/"
 HEADERFILE = "100.hea"
 ATRFILE = '100.atr'
 DATAFILE = "100.dat"
 
 # Obtain the information of each part from the hea file and fill in
-f = open(PATH + HEADERFILE, "r")
+f = open(ECGDATAPATH + HEADERFILE, "r")
 z = f.readline().split()
 nosig, sfreq = int(z[1]), int(z[2])  # single number,samp number
 SAMPLES2READ = 10 * sfreq  # number of data points
@@ -26,7 +26,7 @@ for i in range(nosig):
 f.close()
 
 # Obtain the information of each part from the dat file and fill in
-f=open(PATH+DATAFILE, "rb")
+f=open(ECGDATAPATH + DATAFILE, "rb")
 b = f.read()
 f.close()
 
@@ -70,7 +70,7 @@ else:
     print("Sorting algorithm for more than 2 signals not programmed yet")
 
 # atr  deal
-f = open(PATH + ATRFILE, "rb")
+f = open(ECGDATAPATH + ATRFILE, "rb")
 b = f.read()
 f.close()
 A_init = np.frombuffer(b, dtype=np.uint8)

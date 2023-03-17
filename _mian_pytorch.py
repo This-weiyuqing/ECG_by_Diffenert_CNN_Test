@@ -3,7 +3,7 @@ import pywt
 import wfdb
 import torch
 
-from ECG_read_weiyuqing_without_wfdb import PATH
+from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 
 
 def denoise(date):
@@ -28,13 +28,13 @@ def denoise(date):
 def getDataSet(number, X_data, Y_data):
     ecgClassSet = ['N', 'A', 'V', 'l', 'R']
     print('get' + number + ' ECG data')
-    record = wfdb.rdrecord(PATH + number, channel_names=['MLII'])
+    record = wfdb.rdrecord(ECGDATAPATH + number, channel_names=['MLII'])
     data = record.p_signal.flatten()
     # use def denoise
     rdata = denoise(date=data)
 
     # get type of ECG data
-    annotation = wfdb.rdann(PATH + number, 'atr')
+    annotation = wfdb.rdann(ECGDATAPATH + number, 'atr')
     Rlocation = annotation.sample  # annotation.sample:get R
     Rclass = annotation.symbol
 

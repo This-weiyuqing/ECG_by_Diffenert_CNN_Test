@@ -6,11 +6,11 @@ from matplotlib import pyplot as plt
 #file error
 
 #use db5 ,level9 do deviose
-from ECG_read_weiyuqing_without_wfdb import PATH
+from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 
 #from ECG_read_weiyuqing_without_wfdb import PATH
 
-record=wfdb.rdrecord(PATH+100,channel_names=['MLII'])
+record=wfdb.rdrecord(ECGDATAPATH + 100, channel_names=['MLII'])
 data=record.p_signal.flatten()
 
 coeffs=pywt.wavedec(data=data,wavelet='db5',level=9)
