@@ -1,5 +1,5 @@
-
-#this file give
+# this file give
+import os
 
 import wfdb
 import pywt
@@ -10,13 +10,13 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
 # from _mian_tensorflow import Project_PATH
-Project_PATH = "./Number-Of-CNN-Layers/Two/"
+Project_PATH = '../Number-Of-CNN-Layers/One/'
 
-PICTUREPATH= Project_PATH +'picture/'
-
+PICTUREPATH = Project_PATH + 'picture/'
 
 # from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
-MITBITECGDATAPATH='./MIT-BIT/'
+MITBITECGDATAPATH = '../MIT-BIT/'
+
 
 # wavelet denoise preprocess using mallat algorithm
 
@@ -42,7 +42,7 @@ def denoise(date):
 def getDataSet(number, X_data, Y_data):
     ecgClassSet = ['N', 'A', 'V', 'L', 'R']
     print('get' + number + ' ECG data')
-    record = wfdb.rdrecord(MITBITECGDATAPATH+ number, channel_names=['MLII'])
+    record = wfdb.rdrecord(MITBITECGDATAPATH + number, channel_names=['MLII'])
     data = record.p_signal.flatten()
     # use def denoise
     rdata = denoise(date=data)
@@ -92,7 +92,6 @@ def loadData(ratio, random_seed):
     # print(X_train, X_test, y_train, y_test)
     return X_train, X_test, y_train, y_test
 
-
     # train_ds = np.hstack((dataSet, labelSet))
     # np.random.shuffle(train_ds)
     #
@@ -114,7 +113,7 @@ def plot_heat_map(y_test, y_pred):
     # normalize
     # con_mat_norm = con_mat.astype('float') / con_mat.sum(axis=1)[:, np.newaxis]
     # con_mat_norm = np.around(con_mat_norm, decimals=2)
-
+    # os.remove(PICTUREPATH+'confusion_matrix.png')
     # plot
     plt.figure(figsize=(8, 8))
     seaborn.heatmap(con_mat, annot=True, fmt='.20g', cmap='Blues')
@@ -127,6 +126,9 @@ def plot_heat_map(y_test, y_pred):
 
 
 def plot_history_tf(history):
+    # os.remove(PICTUREPATH+'accuracy.png')
+    # os.remove(PICTUREPATH+'loss.png')
+
     plt.figure(figsize=(8, 8))
     plt.plot(history.history['accuracy'])
     plt.plot(history.history['val_accuracy'])
@@ -166,5 +168,5 @@ def plot_history_torch(history):
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig(PICTUREPATH +'loss.png')
+    plt.savefig(PICTUREPATH + 'loss.png')
     plt.show()

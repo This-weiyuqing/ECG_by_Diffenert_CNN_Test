@@ -6,11 +6,11 @@ import pywt
 import wfdb
 import tensorflow as tf
 from tensorflow import keras
-from utils import loadData, plot_history_tf, plot_heat_map
+from utils_oneLayerCNN import loadData, plot_history_tf, plot_heat_map
 
 #from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 #PATH of this test
-Project_PATH = "./Number-Of-CNN-Layers/One/"
+Project_PATH = "../Number-Of-CNN-Layers/One/"
 #PICTUREPATH= Project_PATH + "picture/"
 log_dir = Project_PATH + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 model_Path_one = Project_PATH  + "model/ecg_model_one_layer.h5"
