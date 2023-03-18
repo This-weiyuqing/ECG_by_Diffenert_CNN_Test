@@ -1,3 +1,6 @@
+
+#this file give
+
 import wfdb
 import pywt
 import seaborn
@@ -5,8 +8,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
-from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 
+# from _mian_tensorflow import Project_PATH
+Project_PATH = "./Number-Of-CNN-Layers/One/"
+
+PICTUREPATH= Project_PATH +'picture/'
+
+
+# from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
+MITBITECGDATAPATH='./MIT-BIT/'
 
 # wavelet denoise preprocess using mallat algorithm
 
@@ -30,15 +40,15 @@ def denoise(date):
 # this function without return
 # use append take return data to pass data
 def getDataSet(number, X_data, Y_data):
-    ecgClassSet = ['N', 'A', 'V', 'l', 'R']
+    ecgClassSet = ['N', 'A', 'V', 'L', 'R']
     print('get' + number + ' ECG data')
-    record = wfdb.rdrecord(ECGDATAPATH + number, channel_names=['MLII'])
+    record = wfdb.rdrecord(MITBITECGDATAPATH+ number, channel_names=['MLII'])
     data = record.p_signal.flatten()
     # use def denoise
     rdata = denoise(date=data)
 
     # get type of ECG data
-    annotation = wfdb.rdann(ECGDATAPATH + number, 'atr')
+    annotation = wfdb.rdann(MITBITECGDATAPATH + number, 'atr')
     Rlocation = annotation.sample  # annotation.sample:get R
     Rclass = annotation.symbol
 
@@ -58,7 +68,7 @@ def getDataSet(number, X_data, Y_data):
             i += 1
         except ValueError:
             i += 1
-        return
+    return
 
 
 # RATIO=The ratio of the training set to the test set，usually is 0.3
@@ -79,7 +89,9 @@ def loadData(ratio, random_seed):
     dataSet = np.array(dataSet).reshape(-1, 300)
     lableSet = np.array(labelSet).reshape(-1)
     X_train, X_test, y_train, y_test = train_test_split(dataSet, lableSet, test_size=ratio, random_state=random_seed)
+    # print(X_train, X_test, y_train, y_test)
     return X_train, X_test, y_train, y_test
+
 
     # train_ds = np.hstack((dataSet, labelSet))
     # np.random.shuffle(train_ds)
@@ -110,7 +122,7 @@ def plot_heat_map(y_test, y_pred):
     plt.xlabel('Predicted labels')
     plt.ylabel('True labels')
     plt.title('Confusion Matrix')
-    plt.savefig('confusion_matrix.png')
+    plt.savefig(PICTUREPATH + 'confusion_matrix.png')
     plt.show()
 
 
@@ -122,7 +134,7 @@ def plot_history_tf(history):
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('accuracy.png')
+    plt.savefig(PICTUREPATH + 'accuracy.png')
     plt.show()
 
     plt.figure(figsize=(8, 8))
@@ -132,7 +144,7 @@ def plot_history_tf(history):
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('loss.png')
+    plt.savefig(PICTUREPATH + 'loss.png')
     plt.show()
 
 
@@ -144,7 +156,7 @@ def plot_history_torch(history):
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('accuracy.png')
+    plt.savefig(PICTUREPATH + 'accuracy.png')
     plt.show()
 
     plt.figure(figsize=(8, 8))
@@ -154,5 +166,5 @@ def plot_history_torch(history):
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    plt.savefig('loss.png')
+    plt.savefig(PICTUREPATH +'loss.png')
     plt.show()

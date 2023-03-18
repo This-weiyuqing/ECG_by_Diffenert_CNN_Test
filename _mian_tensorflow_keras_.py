@@ -3,7 +3,7 @@ import pywt
 import wfdb
 import tensorflow as tf
 
-from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
+ECGDATAPATH= "mit-bih-arrhythmia-database-1.0.0/"
 
 
 def denoise(date):
