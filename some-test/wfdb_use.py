@@ -4,14 +4,14 @@ import numpy as np
 import wfdb
 import matplotlib.pyplot
 
-PATH = './mit-bih-arrhythmia-database-1.0.0/'
+PATH = '../MIT-BIT/'
 
 
 # file error with read_ecg_data(data) parameter data false
 
 def read_ecg_data(data):
     # get the data from the ecg data file and set begin and end points
-    record = wfdb.rdrecord(PATH + data, sampfrom=0, sampto=1500)
+    record = wfdb.rdrecord(PATH + 'data', sampfrom=0, sampto=1500)
     # return type record
     print(type(record))
     print(dir(record))
