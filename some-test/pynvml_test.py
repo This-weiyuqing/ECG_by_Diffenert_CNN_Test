@@ -33,3 +33,5 @@ print(gpu_Used / NUM_EXPAND)
 
 # 可以通过这个获取显存的使用情况
 pynvml.nvmlShutdown()
+
+#get ecg data
