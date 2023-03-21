@@ -11,15 +11,15 @@ from torch.utils.tensorboard import SummaryWriter
 from sklearn.metrics import accuracy_score
 from tqdm import tqdm
 
-from utils import load_data, plot_history_torch, plot_heat_map
+from utils_threeLayerCNN import loadData, plot_history_torch, plot_heat_map
 
 # project root path
-project_path = "./"
+project_path = "../Number-Of-CNN-Layers/Three/"
 # define log directory
 # must be a subdirectory of the directory specified when starting the web application
 # it is recommended to use the date time as the subdirectory name
 log_dir = project_path + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-model_path = project_path + "ecg_model.pt"
+model_path = project_path + "model/ecg_model_three_layer.pt"
 
 # the device to use
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
