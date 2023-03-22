@@ -10,7 +10,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
 # from _mian_tensorflow import Project_PATH
-Project_PATH = '../Number-Of-CNN-Layers/Two/'
+Project_PATH = '../Number-Of-CNN-Layers/Three/'
 
 PICTUREPATH = Project_PATH + 'picture/'
 

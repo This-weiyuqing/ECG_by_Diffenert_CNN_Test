@@ -58,17 +58,17 @@ def CNN_model_level_one():
 
         # ECG data cant add 0 in edge, will broken data ,take false answer. So we need padding same data in edge.
 
-        # take four 21*1 conv excitation function used RElu
-        tf.keras.layers.Conv1D(filters=4, kernel_size=21, strides=1, padding='same', activation='relu'),
-        # take four 3*1 pool,take strids 2.
-
-        tf.keras.layers.MaxPool1D(pool_size=3, strides=2, padding='same'),
+        # take four  conv excitation function used RElu
+        tf.keras.layers.Conv1D(filters=1, kernel_size=3, strides=1, padding='same', activation='relu'),
+        # take four  pool,take strids 2.
+        tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
 
         # tf.keras.layers.Conv1D(filters=4, kernel_size=21, strides=1, padding='same', activation='relu'),
         # tf.keras.layers.MaxPool1D(pool_size=3, strides=2, padding='same'),
 
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(128, activation='relu'),
+        # add dropout  layer, dropout rate = 0.2
         tf.keras.layers.Dropout(rate=0.2),
         tf.keras.layers.Dense(5, activation='softmax')
     ])
