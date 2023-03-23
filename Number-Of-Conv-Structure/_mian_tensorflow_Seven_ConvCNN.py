@@ -6,7 +6,7 @@ import pywt
 import wfdb
 import tensorflow as tf
 from tensorflow import keras
-from utils_three_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
+from utils_seven_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
 
 #from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 #PATH of this test
@@ -20,7 +20,7 @@ RATIO = 0.3
 RANDOM_SEED = 42
 BATCH_SIZE = 128
 #迭代次数
-NUM_EPOCHS = 10
+NUM_EPOCHS = 30
 
 
 def CNN_model_level_one():

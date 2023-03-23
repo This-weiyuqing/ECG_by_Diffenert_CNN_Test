@@ -20,7 +20,7 @@ RATIO = 0.3
 RANDOM_SEED = 42
 BATCH_SIZE = 128
 #迭代次数
-NUM_EPOCHS = 10
+NUM_EPOCHS = 30
 
 
 def CNN_model_level_one():
