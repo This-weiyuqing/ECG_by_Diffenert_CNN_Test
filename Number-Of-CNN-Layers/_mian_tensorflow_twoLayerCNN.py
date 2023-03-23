@@ -13,7 +13,7 @@ from utils_twoLayerCNN import loadData, plot_history_tf, plot_heat_map
 Project_PATH = "../Number-Of-CNN-Layers/Two/"
 #PICTUREPATH= Project_PATH + "picture/"
 log_dir = Project_PATH + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-model_Path_one = Project_PATH  + "model/ecg_model_one_layer.h5"
+model_Path_one = Project_PATH  + "model/ecg_model_two_layer.h5"
 #model_Path_one = Project_PATH + "ecg_model_one_layer.h5"
 
 RATIO = 0.3
