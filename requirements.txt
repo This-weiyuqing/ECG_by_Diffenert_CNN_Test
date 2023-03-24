@@ -2,10 +2,13 @@ matplotlib==3.7.0
 numpy==1.23.5
 opencv_python==4.7.0.72
 Pillow==9.4.0
+pynvml==11.5.0
 PyWavelets==1.4.1
 scikit_learn==1.2.1
 seaborn==0.12.2
 tensorflow==2.10.0
 tensorflow_intel==2.11.0
 torch==2.0.0+cu117
+torchinfo==1.7.2
+tqdm==4.64.1
 wfdb==4.1.0
