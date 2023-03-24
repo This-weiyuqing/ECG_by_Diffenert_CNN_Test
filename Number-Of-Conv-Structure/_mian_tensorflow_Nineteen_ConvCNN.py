@@ -6,11 +6,11 @@ import pywt
 import wfdb
 import tensorflow as tf
 from tensorflow import keras
-from utils_fifteen_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
+from utils_nineteen_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
 
 #from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 #PATH of this test
-Project_PATH = "../Number-Of-Conv-Structure/Seventeen/"
+Project_PATH = "../Number-Of-Conv-Structure/Nineteen/"
 #PICTUREPATH= Project_PATH + "picture/"
 log_dir = Project_PATH + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 model_Path_one = Project_PATH  + "model/ecg_model_Seventeen_conv.h5"
@@ -30,7 +30,7 @@ def CNN_model_level_one():
         tf.keras.layers.InputLayer(input_shape=(300,)),
         tf.keras.layers.Reshape(target_shape=(300, 1)),
 
-        tf.keras.layers.Conv1D(filters=15, kernel_size=17, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=15, kernel_size=19, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
 
         tf.keras.layers.Flatten(),

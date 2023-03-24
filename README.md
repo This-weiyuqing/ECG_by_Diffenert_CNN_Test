@@ -1,7 +1,8 @@
-#   ECG_by_Diffenert_CNN_Test（本科毕业设计：基于 CNN 的心电异常分类算法的设计与实现）
+#   ECG_by_Diffenert_CNN_Test
+# 本科毕业设计：基于 CNN 的心电异常分类算法的设计与实现
 Created by:      魏遇卿
 
-Created on:     2023.3.18
+Created on:     2023.3
 # 1 毕业设计的内容和意义
 ## **1.1    毕业设计的内容**
 

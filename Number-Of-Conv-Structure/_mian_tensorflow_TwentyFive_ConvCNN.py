@@ -6,14 +6,18 @@ import pywt
 import wfdb
 import tensorflow as tf
 from tensorflow import keras
-from utils_fiftyone_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
+
+
+
+
+from utils_twentyfive_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
 
 #from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 #PATH of this test
-Project_PATH = "../Number-Of-Conv-Structure/FiftyOne/"
+Project_PATH = "../Number-Of-Conv-Structure/TwentyFive/"
 #PICTUREPATH= Project_PATH + "picture/"
 log_dir = Project_PATH + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-model_Path_one = Project_PATH  + "model/ecg_model_fiftyone_conv.h5"
+model_Path_one = Project_PATH  + "model/ecg_model_twentyfive_conv.h5"
 #model_Path_one = Project_PATH + "ecg_model_one_layer.h5"
 
 RATIO = 0.3
@@ -27,14 +31,11 @@ def CNN_model_level_one():
     leavlOneModel = tf.keras.models.Sequential([
 
         #take test for one CNN layers model
-
         tf.keras.layers.InputLayer(input_shape=(300,)),
         tf.keras.layers.Reshape(target_shape=(300, 1)),
 
-        tf.keras.layers.Conv1D(filters=15, kernel_size=51, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=15, kernel_size=25, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
-
-
 
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(5, activation='softmax'),
