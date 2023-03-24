@@ -17,33 +17,31 @@ from utils_eleven_of_ConvCNN import loadData, plot_history_tf, plot_heat_map
 Project_PATH = "../Number-Of-Conv-Structure/Eleven/"
 #PICTUREPATH= Project_PATH + "picture/"
 log_dir = Project_PATH + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-model_Path_one = Project_PATH  + "model/ecg_model_seven_conv.h5"
+model_Path_one = Project_PATH  + "model/ecg_model_eleven_conv.h5"
 #model_Path_one = Project_PATH + "ecg_model_one_layer.h5"
 
 RATIO = 0.3
 RANDOM_SEED = 42
 BATCH_SIZE = 128
 #迭代次数
-NUM_EPOCHS = 30
+NUM_EPOCHS = 10
 
 
 def CNN_model_level_one():
     leavlOneModel = tf.keras.models.Sequential([
 
         #take test for one CNN layers model
+        tf.keras.layers.InputLayer(input_shape=(300,)),
+        tf.keras.layers.Reshape(target_shape=(300, 1)),
 
-        tf.keras.layers.InputLayer(input_shape=(300, 1)),
-
-        tf.keras.layers.Conv1D(filters=1, kernel_size=11, strides=1, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=15, kernel_size=11, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
 
-
-
         tf.keras.layers.Flatten(),
-        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(5, activation='softmax'),
         # add dropout  layer, dropout rate = 0.2
-        tf.keras.layers.Dropout(rate=0.2),
-        tf.keras.layers.Dense(5, activation='softmax')
+        # tf.keras.layers.Dropout(rate=0.2),
+        # tf.keras.layers.Dense(5, activation='softmax')
     ])
     return leavlOneModel
 

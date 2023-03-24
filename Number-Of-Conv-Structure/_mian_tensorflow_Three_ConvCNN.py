@@ -20,7 +20,7 @@ RATIO = 0.3
 RANDOM_SEED = 42
 BATCH_SIZE = 128
 #迭代次数
-NUM_EPOCHS = 30
+NUM_EPOCHS = 10
 
 
 def CNN_model_level_one():
@@ -28,18 +28,19 @@ def CNN_model_level_one():
 
         #take test for one CNN layers model
 
-        tf.keras.layers.InputLayer(input_shape=(300, 1)),
+        tf.keras.layers.InputLayer(input_shape=(300,)),
+        tf.keras.layers.Reshape(target_shape=(300, 1)),
 
-        tf.keras.layers.Conv1D(filters=1, kernel_size=3, strides=1, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=15, kernel_size=3, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
 
 
 
         tf.keras.layers.Flatten(),
-        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(5, activation='softmax'),
         # add dropout  layer, dropout rate = 0.2
-        tf.keras.layers.Dropout(rate=0.2),
-        tf.keras.layers.Dense(5, activation='softmax')
+        # tf.keras.layers.Dropout(rate=0.2),
+        # tf.keras.layers.Dense(5, activation='softmax')
     ])
     return leavlOneModel
 
