@@ -13,6 +13,7 @@ print("cpu_b:", cpu_b.device)
 print("cpu_c:", cpu_c.device)
 # 查看gpu是否可用
 print(tf.config.list_physical_devices('GPU'))
+print('asdfa')
 # 指定在gpu上运行
 with tf.device('/gpu:0'):
     gpu_a = tf.random.normal([10000, 1000])
