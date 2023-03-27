@@ -6,14 +6,14 @@ import pywt
 import wfdb
 import tensorflow as tf
 from tensorflow import keras
-from utils_two_of_PoolCNN import loadData, plot_history_tf, plot_heat_map
+from utils_three_of_Filters import loadData, plot_history_tf, plot_heat_map
 
 #from ECG_read_weiyuqing_without_wfdb import ECGDATAPATH
 #PATH of this test
-Project_PATH = "../Number-Of-Pool/One/"
+Project_PATH = "../Number_Of_Filters/Nine/"
 #PICTUREPATH= Project_PATH + "picture/"
 log_dir = Project_PATH + "logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-model_Path_one = Project_PATH  + "model/ecg_model_one_pool.h5"
+model_Path_one = Project_PATH  + "model/ecg_model_nine_filters.h5"
 #model_Path_one = Project_PATH + "ecg_model_one_layer.h5"
 
 RATIO = 0.3
@@ -31,9 +31,12 @@ def CNN_model_level_one():
         tf.keras.layers.InputLayer(input_shape=(300,)),
         tf.keras.layers.Reshape(target_shape=(300, 1)),
 
-        tf.keras.layers.Conv1D(filters=15, kernel_size=3, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=9, kernel_size=3, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
-
+        tf.keras.layers.Conv1D(filters=9, kernel_size=3, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
+        tf.keras.layers.Conv1D(filters=9, kernel_size=3, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
 
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(5, activation='softmax'),
