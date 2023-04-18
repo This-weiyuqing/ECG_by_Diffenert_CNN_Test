@@ -31,11 +31,11 @@ def CNN_model_level_one():
         tf.keras.layers.InputLayer(input_shape=(300,)),
         tf.keras.layers.Reshape(target_shape=(300, 1)),
 
-        tf.keras.layers.Conv1D(filters=3, kernel_size=3, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=71, kernel_size=3, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=3, kernel_size=3, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=71, kernel_size=3, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=3, kernel_size=3, strides=2, padding='same', activation='relu'),
+        tf.keras.layers.Conv1D(filters=71, kernel_size=3, strides=2, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
 
         tf.keras.layers.Flatten(),
