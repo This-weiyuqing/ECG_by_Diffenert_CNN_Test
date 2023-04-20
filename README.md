@@ -55,29 +55,26 @@ ECG实质上是一种微弱的生物电信号，也因此，其对于噪声的�
 3.  开发者个人PC配置为i7-11800H，RTX3070Laptop，32G DDR4，具备针对本课题的算法运行能力。
 4.  开发者可通过浙江图书馆、Google学术等平台，获取到相应的文献以针对本课题进行进一步的知识储备。
 
-## 3.3  主要参考文献
+## 3.3  毕业论文参考文献
 
-[1] 《中国心血管健康与疾病报告2021》要点解读 [J]. 中国心血管杂志, 2022, 27(04): 305-18.
-
-[2] SAMOL A, BISCHOF K, LUANI B, et al. Single-Lead ECG Recordings Including Einthoven and Wilson Leads by a Smartwatch: A New Era of Patient Directed Early ECG Differential Diagnosis of Cardiac Diseases? [J]. Sensors, 2019, 19(20): 4377.
-
-[3] 张宁宁, 马金刚, 樊昭磊, et al. 基于机器学习的心电自动诊断算法综述 [J]. 医疗卫生装备, 2022, 43(05): 92-7.
-
-[4] 刘奇. 基于集成学习算法的ECG身份识别 [D]; 吉林大学, 2019.
-
-[5] 欧阳波. 基于小波分析的ECG信号处理技术研究 [D]; 湖南大学, 2014.
-
-[6] LOGESH R, SUBRAMANIYASWAMY V, MALATHI D, et al. Enhancing recommendation stability of collaborative filtering recommender system through bio-inspired clustering ensemble method [J]. Neural Computing and Applications, 2020, 32(7): 2141-64.
-
-[7] 李伟康. 基于混合深度学习算法的ECG心电信号分类研究 [D]; 江苏科技大学, 2022.
-
-[8] 胡军锋, 郑彬. 基于深度学习的ECG/PPG血压测量方法 [J]. 生物医学工程研究, 2022, 41(1): 46-54.
-
-[9] ZHU J, LV J, KONG D. CNN-FWS: A Model for the Diagnosis of Normal and Abnormal ECG with Feature Adaptive [J]. Entropy, 2022, 24(4): 471-.
-
-[10] PETMEZAS G, HARIS K, STEFANOPOULOS L, et al. Automated Atrial Fibrillation Detection using a Hybrid CNN-LSTM Network on Imbalanced ECG Datasets [J]. Biomedical Signal Processing and Control, 2021, 63: 102194.
-
-[11] 周飞燕, 金林鹏, 董军. 卷积神经网络研究综述 [J]. 计算机学报, 2017, 40(6): 1229-51.
+    [1]	《中国心血管健康与疾病报告2021》要点解读 [J]. 中国心血管杂志, 2022, 27(04): 305-18.
+    [2]	SAMOL A, BISCHOF K, LUANI B, et al. Single-Lead ECG Recordings Including Einthoven and Wilson Leads by a Smartwatch: A New Era of Patient Directed Early ECG Differential Diagnosis of Cardiac Diseases? [J]. Sensors, 2019, 19(20): 4377.
+    [3]	刘奇. 基于集成学习算法的ECG身份识别 [D]; 吉林大学, 2019.
+    [4]	欧阳波. 基于小波分析的ECG信号处理技术研究 [D]; 湖南大学, 2014.
+    [5]	LOGESH R, SUBRAMANIYASWAMY V, MALATHI D, et al. Enhancing recommendation stability of collaborative filtering recommender system through bio-inspired clustering ensemble method [J]. Neural Computing and Applications, 2020, 32(7): 2141-64.
+    [6]	李伟康. 基于混合深度学习算法的ECG心电信号分类研究 [D]; 江苏科技大学, 2022.
+    [7]	胡军锋, 郑彬. 基于深度学习的ECG/PPG血压测量方法 [J]. 生物医学工程研究, 2022, 41(1): 46-54.
+    [8]	ZHU J, LV J, KONG D. CNN-FWS: A Model for the Diagnosis of Normal and Abnormal ECG with Feature Adaptive [J]. Entropy, 2022, 24(4): 471-.
+    [9]	PETMEZAS G, HARIS K, STEFANOPOULOS L, et al. Automated Atrial Fibrillation Detection using a Hybrid CNN-LSTM Network on Imbalanced ECG Datasets [J]. Biomedical Signal Processing and Control, 2021, 63: 102194.
+    [10]	GOLDBERGER A, AMARAL, L., GLASS, L., HAUSDORFF, J., IVANOV, P.C., MARK, R., MIETUS, J.E., MOODY, G.B., PENG, C.K. AND STANLEY, H.E., 2000. PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. [J]. Circulation [Online], 2000, (101 (23)): e215–e20.
+    [11]	贺京生. 基于小波变换的十二导联心电信号分析研究 [D]; 南昌大学, 2016.
+    [12]	HUBEL D H, WIESEL T N. Receptive fields, binocular interaction and functional architecture in the cat's visual cortex [J]. The Journal of Physiology, 1962, 160(1): 106-54.
+    [13]	FUKUSHIMA K. Cognitron: A self-organizing multilayered neural network [J]. Biological Cybernetics, 1975, 20(3-4): 121-36.
+    [14]	FUKUSHIMA K. Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position [J]. Biological Cybernetics, 1980, 36(4): 193-202.
+    [15]	LECUN Y, BOTTOU L, BENGIO Y, et al. Gradient-based learning applied to document recognition [J]. Proceedings of the IEEE, 1998, 86(11): 2278-324.
+    [16]	TOMPOLLARD. MIT-LCP/wfdb-python:Native Python WFDB package [Z]. 
+    [17]	HOCHREITER S, SCHMIDHUBER J. Long short-term memory [J]. Neural Comput, 1997, 9(8): 1735-80.
+    [18]	BUBECK S E, CHANDRASEKARAN V, ELDAN R, et al. Sparks of Artificial General Intelligence: Early experiments with GPT-4 [J]. arXiv pre-print server, 2023.
 
 # 4 代码文件说明
 ##  4.1  _main_tensorflow_oneLayerCNN.py
@@ -199,4 +196,5 @@ ECG实质上是一种微弱的生物电信号，也因此，其对于噪声的�
 ##  6.3 网络结构的构建
 
 本部分不做展开描述。您有想法可发邮件至this_weiyuqing@foxmail.com探讨。
-                                                                                                                                                                               
+
+# 7 代码运行说明
