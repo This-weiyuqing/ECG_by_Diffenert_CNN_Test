@@ -5,11 +5,11 @@ import numpy as np
 def getDataset(number, X_data):
     # get ECG from mit-bih-arrhythmia-database-1.0.0
     print("get data:" + number + " ECG")
-    record = wfdb.rdrecord('./mit-bih-arrhythmia-database-1.0.0/' + number, channel_names=['MLII'])
+    record = wfdb.rdrecord('./MIT-BIT/' + number, channel_names=['MLII'])
     data = record.p_signal.flatten()
 
     # get R sample and symbol
-    annotation = wfdb.rdann('mit-bih-arrhythmia-database-1.0.0/' + number, 'atr')
+    annotation = wfdb.rdann('MIT-BIT/' + number, 'atr')
     Rlocatation = annotation.sample
     Rclass = annotation.symbol
 
