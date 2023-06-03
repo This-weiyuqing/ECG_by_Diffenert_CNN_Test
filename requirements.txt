@@ -12,3 +12,7 @@ torch==2.0.0+cu117
 torchinfo==1.7.2
 tqdm==4.64.1
 wfdb==4.1.0
+
+keras~=2.10.0
+opencv-python~=4.7.0.72
+scikit-learn~=1.2.1

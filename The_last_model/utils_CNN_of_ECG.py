@@ -33,7 +33,7 @@ def denoise(date):
         coeffs[i] = pywt.threshold(coeffs[i], threshold)
     # get signal that before wavelet
     rdata = pywt.waverec(coeffs=coeffs, wavelet='db5')
-
+    return rdata
 
 # get ECG data,date type and denoise
 # this function without return
