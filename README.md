@@ -4,6 +4,8 @@ Created by:      魏遇卿
 
 Created on:     2023.3
 
+（2024.4.22——CSDN会偷项目，这个项目是只发布在GitHub上的，地址如下）
+
 github: [This-weiyuqing/ECG_by_Diffenert_CNN_Test]( https://github.com/This-weiyuqing/ECG_by_Diffenert_CNN_Test)
 # 1 毕业设计的内容和意义
 ## **1.1    毕业设计的内容**
